@@ -1,0 +1,17 @@
+/* Centering headers, changing background color, and adding padding */
+header {
+  text-align: center;
+  background-color: #FA4127;
+  padding: 20px;
+}
+/* Centering headers */
+h1, h2, h3 {
+  text-align: center;
+}
+
+body {
+  background-color: #F0E7E6;
+  padding: 0 100px; /* Adding padding to the sides */
+}
+
+/* We did not cover CSS in Programming Fundamentals. However, I was lucky enough to find an online resource via Reddit at easyhtmlcss.com/lessons/

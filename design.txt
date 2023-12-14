@@ -1,0 +1,103 @@
+PROBLEM STATEMENT:
+  A program is needed that functions as a text game for a user. In this case, the game will be a text-based mystery game set in ancient Rome. The game will prompt the user with the mystery scenario, that they are trying to 
+  find the traitorous senator and accuse them, thus saving their leader, Julius Caesar, from assassination. Next, the game will prompt the user, using a WHILE loop, for which of three senators, Longinus, Cicero, or Atticus, 
+  they want to speak with. The player will be able to 'press' the three suspects for more information. Finally, when the user has figured they have enough confidence to accuse a senator, they may type 'accuse' and name the 
+  suspect. The game will use a nested IF statement to determine the user input. If the user accuses the quilty senator, they win, while they lose if they accuse the incorrect senator. They player may type 'quit' if they wish to 
+  exit the game. User inputs and processing will be separated into separate functions.
+  
+NOUNS:
+  program, scenario, WHILE loop, IF statement, function
+  
+VERBS:
+  prompt, speak, press, accuse, quit
+  
+DEFINING DIAGRAM:
+  INPUTS:
+    name of senator to speak with
+    name of senator to press
+    name of senator to accuse
+    
+  PROCESSING:
+    alert user with scenario
+    prompt user for senator to speak with
+    prompt user for senator to press
+    prompt user for senator to accuse
+    display dialogue with chosen senator
+    display pressed dialogue with chosen senator
+    display accusation of chosen senator
+    if accusation is correct, inform user of victory
+    if accusation is incorrect, inform user of defeat
+    
+  OUTPUTS:
+    dialogue with senators
+    pressed dialoge with senators
+    correct or incorrect accusation of senator
+    victory or defeat message
+    
+SOLUTION ALGORITHM:
+beginGame
+  alert user of game context
+  alert user of mystery scenario
+  
+function playingGame
+  initialize suspect array to "Longinus", "Cicero", "Atticus"
+  initialize gaming to true
+  initialize choice to ""
+  initialize press to ""
+  initialize accusation to ""
+  
+While gaming is true
+  prompt user for input to speak with senators, press senators, accuse a senator, or to quit
+  if user chooses to speak, call speakToSenator function
+  if user chooses to press, call pressSenator function
+  if user chooses to accuse, call accusation function
+  if user chooses to quit, set gaming to false
+  
+speakToSenator
+  if user chooses Longinus, alert with Longinus' statement
+  if user chooses Cicero, alert with Cicero's statement
+  if user chooses Atticus, alert with Atticus' statement
+  
+pressSenator
+  if user chooses Longinus, alert with additional Longinus statement
+  if user chooses Cicero, alert with additional Cicero statement
+  if user chooses Atticus, alert with additional Atticus statement
+  
+accuseSenator
+  if user chooses Longinus, display vicotry message
+  if user chooses Cicero, display defeat message
+  if user chooses Atticus, display defeat message
+  
+TEST CASES:
+
+TEST CASE 1:
+
+  INPUT VALUES: Speak with Longinus and Cicero, press Cicero, accuse Cicero
+  
+  EXPECTED RESULT: Longinus statement, Cicero statement, Cicero pressed message, Cicero accusation alert, defeat message
+  
+  ACTUAL RESULT: Longinus statement, Cicero statement, Cicero pressed message, Cicero accusation alert, defeat message
+  
+TEST CASE 2:
+
+  INPUT VALUES: Speak with Atticus, press Loginus, accuse Loginus
+  
+  EXPECTED RESULT: Atticus statement, Loginus pressed message, Loginus accusation alert, victory message
+  
+  ACTUAL RESULT: Atticus statement, Loginus pressed message, Loginus accusation alert, victory message
+  
+TEST CASE 3:
+
+  INPUT VALUES: Speak with Cicero, press Cicero, accuse Ciecro
+  
+  EXPECTED RESULT: Cicero pressed message, error at mispelling
+  
+  ACTUAL RESULT: Cicero pressed message, error at mispelling
+  
+TEST CASE 4:
+
+  INPUT VALUES: Speak with Loginus, Cicero, and Atticus, accuse Atticus
+  
+  EXPECTED RESULT: Loginus statement, Cicero statement, Atticus statement, Atticus accusation alert, defeat message
+  
+  ACTUAL RESULT: Loginus statement, Cicero statement, Atticus statement, Atticus accusation alert, defeat message
